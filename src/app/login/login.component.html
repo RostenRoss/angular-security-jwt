@@ -1,0 +1,41 @@
+
+<h1>Estas en la seccion de Log In.</h1>
+<!--<div *ngIf="isLoggedIn; else loggedOut">
+  Logged in ass {{roles}}.
+</div>-->
+<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+  <div class="form-group row">
+    <label for="username" class="col-sm-2 col-form-label">Username</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" name="username" placeholder="Your Username" [(ngModel)]="form.username" #username="ngModel" required>
+    </div>
+    <!--<div *ngIf="f.submitted && username.invalid">
+      <div *ngIf="username.errors.required">Username is required</div>
+    </div-->
+  </div>
+  <div class="form-group row">
+    <label for="password" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-4">
+      <input type="password" class="form-control" name="password" placeholder="Your Password" [(ngModel)]="form.password" #password="ngModel" required minlength="6">
+  <!--    <div *ngIf="f.submitted && password.invalid">
+        <div *ngIf="password.errors.required">Username is required</div>
+        <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+
+      </div>-->
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary">Login</button>
+    <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
+      Login failed: {{errorMessage}}
+    </div>
+  </div>
+</form>
+
+<br/>
+<a href="signup" class="btn btn-success">Sign Up</a>
+<br/>
+
+<p>Al loguearte podras acceder a mas beneficios.</p>
+<h2><span style="font-size: 3em; color: #4682B4;">
+<i class="fas fa-tools"></i></span>En construccion...</h2>

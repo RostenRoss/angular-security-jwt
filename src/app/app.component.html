@@ -1,0 +1,57 @@
+<nav class="navbar navbar-inverse" style="background-color: #4B0082">
+  <div class="container-fluid col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+    <ul class="nav navbar-nav col-lg-6 col-md-6 col-xs-6" routerLinkActive="active">
+      <li class="nav-item"><a class="nav-link" routerLink="home"><span style="font-size: 3em; color: #FFEFD5;"><i class="fas fa-home"></i></span><b>Home</b></a></li>
+
+      <li *ngIf="authority === 'user'" class="nav-item">
+        <a class="nav-link" routerLink="user"><span style="font-size: 3em; color: #FFEFD5;"><i class="fas fa-user-check"></i></span><b>User Board</b></a>
+      </li>
+
+      <li *ngIf="authority === 'admin'" class="nav-item">
+        <a class="nav-link" routerLink="admin"><span style="font-size: 3em; color: #FFEFD5;"><i class="fas fa-user-astronaut"></i></span><b>Admin Board</b></a>
+      </li>
+
+      <li *ngIf="!authority" class="nav-item">
+        <a class="nav-link" routerLink="auth/login"><span style="font-size: 3em; color: #FFEFD5;"><i class="fas fa-users"></i></span><b> Login</b></a>
+      </li>
+
+      <li class="nav-item ">
+        <a class="nav-link" routerLink="lenguaje">  <span style="font-size: 3em; color: #FFEFD5;"><i class="fas fa-file-code"></i></span><b> Lenguajes</b></a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right " routerLinkActive="active">
+      <li class="nav-item float-left">
+        <a class="nav-link" href="https://www.facebook.com/Fate.averruncus.the.tertium?ref=bookmarks" target="_blank" data-toggle="tooltip" data-placement="top" title="Ir a nuestro Facebook">
+          <span style="font-size: 3em; color: #FFEFD5;">
+            <i class="fab fa-facebook-square"></i>
+          </span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="http://www.github.com/RostenRoss" target="_blank" data-toggle="tooltip" data-placement="top" title="Ir a nuestro Github">
+          <span style="font-size: 3em; color: #FFEFD5;">
+            <i class="fab fa-github-alt"></i>
+          </span>
+        </a>
+      </li>
+       <li class="nav-item dropdown show mx-2">
+          <a class="btn btn-outline-primary dropdown-toggle" href="#"	role="button" id="dropdownLenguaje" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span>Idioma</span>
+          </a>
+
+  				<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#">ES</a>
+            <a class="dropdown-item" href="#">EN</a>
+  					<a class="dropdown-item" href="#">DE</a>
+  				</div>
+  		</li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+
+</div>
+<app-footer></app-footer>
