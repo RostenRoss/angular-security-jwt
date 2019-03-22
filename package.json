@@ -34,8 +34,7 @@
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26",
     "typescript": "~3.2.2",
-    "@angular/http": "^6.0.2"
-
+    "@angular/common/Http": "~7.2.0"
   },
   "devDependencies": {
     "typescript": "~3.2.2",
