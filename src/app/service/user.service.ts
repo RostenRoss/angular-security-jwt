@@ -7,9 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  private userUrl = 'http://localhost:8080/api/test/user';
-  private pmUrl ='http://localhost:8080/api/test/pm';
-    private adminUrl ='http://localhost:8080/api/test/admin';
+  private userUrl = 'https://dashboard.heroku.com/apps/rosten-web-spring-angular/api/test/user';
+    private adminUrl ='https://dashboard.heroku.com/apps/rosten-web-spring-angular/api/test/admin';
 
   constructor( private http: HttpClient) { }
 
@@ -17,9 +16,6 @@ export class UserService {
       return this.http.get(this.userUrl, { responseType: 'text'});
     }
 
-    getPMBoard(): Observable<string>{
-      return this.http.get(this.pmUrl, { responseType: 'text'});
-    }
     getAdminBoard(): Observable<string>{
       return this.http.get(this.adminUrl, { responseType: 'text'});
     }

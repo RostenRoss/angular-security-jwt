@@ -1,8 +1,3 @@
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-signup-info',
-})
 export class SignUpInfo {
   name: string;
   username: string;
